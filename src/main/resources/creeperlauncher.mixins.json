@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "creeperlauncher.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"CreeperEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
