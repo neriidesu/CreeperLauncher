@@ -24,7 +24,6 @@ loom {
 	mods {
 		"creeperlauncher" {
 			sourceSet sourceSets.main
-			sourceSet sourceSets.client
 		}
 	}
 
