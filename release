@@ -1,0 +1,14 @@
+#!/bin/bash
+
+raw_version=$(./gradlew properties | grep mod_version: | sed 's/^.*: //')
+
+version=v$(./gradlew properties | grep mod_version: | sed 's/^.*: //' | sed -r 's/[+]+/-/g') 
+
+minecraft_version=$(./gradlew properties | grep minecraft_version: | sed 's/^.*: //')
+
+echo $version
+echo $minecraft_version
+
+./gradlew build
+
+gh release create $version -d build/libs/creeperlauncher-$raw_version.jar --notes "Release for $minecraft_version" 
